@@ -19,25 +19,18 @@ class DrawerPageCalendar extends StatefulWidget {
 }
 
 class ScheduleExample extends State<DrawerPageCalendar> {
-  CalendarController _controller;
-  List<String> _items;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = CalendarController();
-    _items = [
-      'Day view',
-      'Week view',
-      'Work week view',
-      'Month view',
-      'Schedule view',
-      'Timeline day',
-      'Timeline week',
-      'Timeline work week',
-      'Timeline month'
-    ];
-  }
+  final CalendarController _controller = CalendarController();
+  List<String> _items = [
+    'Day view',
+    'Week view',
+    'Work week view',
+    'Month view',
+    'Schedule view',
+    'Timeline day',
+    'Timeline week',
+    'Timeline work week',
+    'Timeline month'
+  ];
 
   @override
   Widget build(BuildContext context) {
