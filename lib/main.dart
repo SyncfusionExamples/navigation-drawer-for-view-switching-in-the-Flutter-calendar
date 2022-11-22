@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
-void main() => runApp(DrawerPage());
+void main() => runApp(const DrawerPage());
 
 class DrawerPage extends StatelessWidget {
+  const DrawerPage({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: DrawerPageCalendar(),
     );
@@ -14,13 +16,15 @@ class DrawerPage extends StatelessWidget {
 }
 
 class DrawerPageCalendar extends StatefulWidget {
+  const DrawerPageCalendar({super.key});
+
   @override
   State<StatefulWidget> createState() => ScheduleExample();
 }
 
 class ScheduleExample extends State<DrawerPageCalendar> {
   final CalendarController _controller = CalendarController();
-  List<String> _items = [
+  final List<String> _items = [
     'Day view',
     'Week view',
     'Work week view',
@@ -37,17 +41,17 @@ class ScheduleExample extends State<DrawerPageCalendar> {
     return Scaffold(
       body: SafeArea(
           child: SfCalendar(
-        view: CalendarView.month,
-        controller: _controller,
-        dataSource: _getCalendarDataSource(),
-      )),
+            view: CalendarView.month,
+            controller: _controller,
+            dataSource: _getCalendarDataSource(),
+          )),
       drawer: Drawer(
         child: ListView.builder(
           itemCount: _items.length,
           itemBuilder: (context, index) {
             return GestureDetector(
                 child: ListTile(
-                  title: Text('${_items[index]}'),
+                  title: Text(_items[index]),
                 ),
                 onTap: () {
                   if (index == 0) {
@@ -89,13 +93,13 @@ class ScheduleExample extends State<DrawerPageCalendar> {
     List<Appointment> appointments = <Appointment>[];
     appointments.add(Appointment(
       startTime: DateTime.now(),
-      endTime: DateTime.now().add(Duration(hours: 2)),
+      endTime: DateTime.now().add(const Duration(hours: 2)),
       subject: 'Meeting',
       color: Colors.green,
     ));
     appointments.add(Appointment(
-      startTime: DateTime.now().add(Duration(hours: 3)),
-      endTime: DateTime.now().add(Duration(hours: 4)),
+      startTime: DateTime.now().add(const Duration(hours: 3)),
+      endTime: DateTime.now().add(const Duration(hours: 4)),
       subject: 'Planning',
       color: Colors.orange,
     ));
