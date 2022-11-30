@@ -4,7 +4,7 @@ A quick-start example to help you how to use navigation drawer for view switchin
 
 In the Flutter Event Calendar, you can use navigation drawer for view switching by loading controller views in drawer of the Scaffold widget and show the calendar in body region. First you need to place the ListView.builder in the drawer of the Scaffold widget for view switching. Then Place the calendar inside the body of Scaffold widget.
 
-
+![NavigationDrawer](https://user-images.githubusercontent.com/46158936/204765334-89a1daee-7fd2-4e46-88d2-5a56936aa600.gif)
 
 ## Requirements to run the demo
 * [VS Code](https://code.visualstudio.com/download)
